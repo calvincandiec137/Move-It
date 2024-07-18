@@ -11,71 +11,119 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <style>
-    
+    body {
+      padding: 0;
+    }
 
-    .navbar img{
+    @media screen and (max-width: 768px) {
+      body > *:not(.navbar,#foot) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    .navbar {
+      z-index: 1000;
+      position: fixed;
+      width: 100%;
+    }
+
+    .navbar img {
       width: 30px;
       height: auto;
       margin-right: 4px;
       margin-top: 5px;
     }
 
-    .display-4.fw-bold.text-body-emphasis{
-      margin:0px;
+    .display-4.fw-bold.text-body-emphasis {
+      margin: 0;
+      padding-top: 6rem;
     }
 
-    .navbar-expand-lg{
-      z-index: 1000;
-      position: fixed;
-      width: 100%;
-    }
-
-    .text-body-emphasis,.mb-4 {
+    .text-body-emphasis, .mb-4 {
       text-align: center;
       font-size: 1.3rem;
-      
     }
 
-    .fw-bold.text-body-emphasis{
+    .fw-bold.text-body-emphasis {
       text-align: center;
     }
 
-    .text-body-emphasis{
+    .text-body-emphasis {
       font-size: 3rem;
       text-align: left;
     }
 
-    .display-4{
-      margin-top: 6rem;
-      
-    } 
-    
-
-    .container{
+    .container {
       display: flex;
       justify-content: center;
     }
 
-    #hr-1{
-      margin: 0px;
-    }
-
-    #featured-3{
+    #featured-3 {
       display: block;
-      font-size:1rem ;
+      font-size: 1rem;
       margin-top: 55px;
     }
 
-    .feature-icon{
+    .feature-icon {
       padding: 18px;
       border-radius: 10px;
-
     }
 
-    .form{
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      border: 2px solid rgb(13,110,253);
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+    }
+
+    .carousel-control-next-icon {
+      transform: rotate(180deg);
+    }
+
+    .card {
       display: flex;
-      float: right;
-      width: 50%;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: rgba(255, 255, 255, 1);
+      padding: 20px;
+      max-width: 320px;
+      margin-bottom: 1rem;
+    }
+
+    #review {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 8rem 0;
+    }
+
+    #contact1 {
+     
+      padding: 4rem 2rem;
+      display: flex;
+      width: 30%;
+      float: left;
+      justify-content: center;
+    }
+
+    .contact-content {
+    
+    }
+
+    .contact-title {
+        color: rgb(13,110,253);
+      font-size: 5rem;
+      font-weight: 800;
+    }
+
+    .contact-details {
+      font-weight: 300;
+      font-size: 2.5rem;
+    }
+
+/* -------------------------------------------------------------------------------- */
+.form{
+      width: 70%;
       padding: 2rem;
       margin-right: 2rem;
 }
@@ -85,6 +133,7 @@
 .form {
   display: flex;
   flex-direction: column;
+  float: right;
   gap: 10px;
   max-width: 350px;
   background-color:white;
@@ -279,130 +328,56 @@
   right: 0;
   width: 0;
 }
+/* ------------------------------------------------------------------------------------ */
 
-#contact1{
-  background-color: rgb(13,110,253);
-}
-
-.carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
-}
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  border: 2px solid rgb(13,110,253);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
-}
-
-.carousel-control-next-icon {
-  transform: rotate(180deg);
-}
-/* ------------------------------------------------------------------------------------------- */
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: rgba(255, 255, 255, 1);
-  padding: 20px;
-  max-width: 320px;
-}
-
-.stars {
-  display: flex;
-  grid-gap: 0.125rem;
-  gap: 0.125rem;
-  color: rgb(238, 203, 8);
-}
-
-.star {
-  height: 1.25rem;
-  width: 1.25rem;
-}
-
-.infos {
-  margin-top: 1rem;
-}
-
-.date-time {
-  color: rgba(7, 63, 216, 1);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.description {
-  margin-top: 0.4rem;
-  line-height: 1.625;
-  color: rgba(107, 114, 128, 1);
-}
-
-.author {
-  margin-top: 1.3rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: rgba(107, 114, 128, 1);
-}
-/* ------------------------------------------------------------------------------------------- */
-
-#review{
-  display: flex;
-  flex-direction: row;
-  margin: 8rem 2rem;
-  justify-content: space-around;
-}
-/* -------------------------------------------------------------------------------- */
-#contact1 {
-    margin-top: 4rem;
-    margin-left: 8rem;
-  }
-
-  .contact-content {
+#foot-form{
+    margin-top: 3rem;
     width: 50%;
-    float: left;
-  }
+    height: auto;
+    float: right;
+}
 
-  .contact-title {
-    font-size: 5rem;
-    font-weight: 800;
-    color: rgb(13,110,253);
-  }
+.form{
+    display: flex;
 
-  .contact-details {
-    font-weight: 300;
-    font-size: 2rem;
-  }
+}
 
-  @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
+      #review {
+        flex-direction: column;
+        align-items: center;
+      }
 
-    .contact2{
-      width: 100%;
+      #contact1{
+        width: 100%;
+        display: block;
+      }
+
+      #foot-form{
+        display: block;
+        width: 100%;
+      }
+
+      .card {
+        width: 100%;
+        max-width: none;
+      }
+
+      .contact-title {
+        font-size: 5rem;
+      }
+
+      .contact-details {
+        font-size: 3rem;
+      }
     }
-
-    #contact1 {
-    margin-top: 4rem;
-    margin-left: 10rem;
-  }
-
-    .contact-title {
-      font-size: 3rem;
-    }
-
-    .contact-details {
-      font-size: 1.3rem;
-    }
-
-    #review {
-      display: block;
-      font-size: 0.75rem;
-      margin-left: 4.5rem;
-    }
-
-  }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary"  style="background-color: grey;">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <img src="box-seam.svg" />
+      <img src="box-seam.svg" alt="Move It Logo" />
       <a class="navbar-brand" href="#">Move It</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -429,271 +404,168 @@
               <li><a class="dropdown-item" href="#">Nation wide</a></li>
             </ul>
           </li>
-          
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="Search" placeholder="Postcode" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="Postcode" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Check</button>
         </form>
       </div>
     </div>
   </nav>
 
-
-  <h1  id="home" class="display-4 fw-bold text-body-emphasis" style="padding-top: 4rem;">Move With Joy</h1>
-  <div class="col-lg-6 mx-auto" bis_skin_checked="1">
-    <p class="lead mb-4 ">Welcome to our website, where we are on a mission to provide exceptional moving services to customers in the US. As a startup, we believe that moving doesn't have to be stressful or complicated, and we are passionate about making the process as seamless and enjoyable as possible.</p>
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5" bis_skin_checked="1">
-      <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get Quote</button>
-      <a href="#contact1">  <button type="button"  class="btn contact2 btn-outline-secondary btn-lg px-14">Contact Us</button></a>
-    </div>
-  </div>
-  <div class="overflow-hidden" style="max-height: 50vh;" bis_skin_checked="1">
-    <div class="container" bis_skin_checked="1">
-      <img src="/undraw_delivery_truck_vt6p.svg" class="img-fluid border rounded-3 shadow-lg mb-7" alt="Example image" width="700" height="1000" >
-    </div>
-  </div>
-  
-
-  <div class="container px-4 py-5" id="featured-3" bis_skin_checked="1">
-    <h2 class="pb-2 border-bottom">Why Move With Us?</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3" bis_skin_checked="1">
-      <div class="feature col" bis_skin_checked="1">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center 
-        text-bg-primary bg-gradient fs-2 mb-3" bis_skin_checked="1">
-          <img src="./briefcase.svg" alt="briefcase" height="30">
+  <main>
+    <section id="home">
+      <h1 class="display-4 fw-bold text-body-emphasis">Move With Joy</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Welcome to our website, where we are on a mission to provide exceptional moving services to customers in the US. As a startup, we believe that moving doesn't have to be stressful or complicated, and we are passionate about making the process as seamless and enjoyable as possible.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get Quote</button>
+          <a href="#contact1" class="btn btn-outline-secondary btn-lg px-4">Contact Us</a>
         </div>
-        <h3 class="fs-2 text-body-emphasis">Professional</h3>
-        <p>Our team of professional movers are trained to prioritize efficiency, organization, and attention to detail. We understand that your possessions are more than just objects - they are a reflection of your life, memories, and experiences. That's why we take extra care to ensure that everything is packed and transported with the utmost care and attention.
-          </p>
-        
       </div>
-      <div class="feature col" bis_skin_checked="1">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3" bis_skin_checked="1">
-          <img src="/bus-front.svg" height="40">
+      <div class="overflow-hidden" style="max-height: 50vh;">
+        <div class="container">
+          <img src="/undraw_delivery_truck_vt6p.svg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Moving truck illustration" width="700" height="500">
         </div>
-        <h3 class="fs-2 text-body-emphasis">Countrywide</h3>
-        <p>We offer a range of services to suit your individual needs, whether you're moving locally or across the country. Our team can handle everything from packing and loading to unloading and unpacking, so you can focus on settling into your new home. And with our transparent pricing and no hidden fees, you can trust that you're getting a fair and competitive rate for our services.
-          </p>
-        
       </div>
-      <div class="feature col" bis_skin_checked="1">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3" bis_skin_checked="1">
-        <img src="/chat-square-heart.svg" height="40">
+    </section>
+
+    <section id="featured-3" class="container px-4 py-5">
+      <h2 class="pb-2 border-bottom">Why Move With Us?</h2>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+            <img src="./briefcase.svg" alt="Professional icon" height="30">
+          </div>
+          <h3 class="fs-2">Professional</h3>
+          <p>Our team of professional movers are trained to prioritize efficiency, organization, and attention to detail. We understand that your possessions are more than just objects - they are a reflection of your life, memories, and experiences.</p>
         </div>
-        <h3 class="fs-2 text-body-emphasis">Personal Touch</h3>
-        <p>At our core, we believe that moving should be an exciting and positive experience, not a stressful one. By providing exceptional moving services in the US, we hope to revolutionize the way people think about moving and provide a better, more personalized experience for our customers. Contact us today to learn more about how we can help you with your next move.
-          Get a quote
-          </p>
-        
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+            <img src="/bus-front.svg" alt="Countrywide icon" height="40">
+          </div>
+          <h3 class="fs-2">Countrywide</h3>
+          <p>We offer a range of services to suit your individual needs, whether you're moving locally or across the country. Our team can handle everything from packing and loading to unloading and unpacking, so you can focus on settling into your new home.</p>
+        </div>
+        <div class="feature col">
+          <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+            <img src="/chat-square-heart.svg" alt="Personal Touch icon" height="40">
+          </div>
+          <h3 class="fs-2">Personal Touch</h3>
+          <p>At our core, we believe that moving should be an exciting and positive experience, not a stressful one. By providing exceptional moving services in the US, we hope to revolutionize the way people think about moving and provide a better, more personalized experience for our customers.</p>
+        </div>
       </div>
-    </div>
-  </div>
-<!--------------------------------------------------------------------------------------------------------->
-<div class="slide" style="display: flex; justify-content: center; align-items:stretch;">
-<div id="carouselExample" class="carousel slide" style="width: 70%; height:auto; margin-top: 4rem;">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./couple.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./dog.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./family.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+    </section>
 
-</div>
+    <section id="testimonials" class="container">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./couple.jpg" class="d-block w-100" alt="Happy couple after moving">
+          </div>
+          <div class="carousel-item">
+            <img src="./dog.jpg" class="d-block w-100" alt="Dog in moving box">
+          </div>
+          <div class="carousel-item">
+            <img src="./family.jpg" class="d-block w-100" alt="Family in new home">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
 
-<!--------------------------------------------------------------------------------------------------------->
-  
-<div id="review">
-<div class="card">
-  <div class="stars">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
+    <section id="review">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="stars">
+          <!-- Star SVGs here -->
+        </div>
+        <div class="infos">
+          <p class="date-time">2 days ago</p>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur.</p>
+        </div>
+        <div class="author">— John Doe</div>
+      </div>
+      <!-- Repeat for Card 2 and Card 3 -->
+      <div class="card">
+        <div class="stars">
+          <!-- Star SVGs here -->
+        </div>
+        <div class="infos">
+          <p class="date-time">2 days ago</p>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur.</p>
+        </div>
+        <div class="author">— John Doe</div>
+      </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-  </div>
-
-  <div class="infos">
-    <p class="date-time">
-                    2 day ago
-    </p>
-    <p class="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur.
-    </p>
-</div>
-
-<div class="author">
-  — John Doe
-</div>
-</div>
-
-<!--------------------------------------------------------------------------------------------------------->
-  
-
-<div class="card">
-  <div class="stars">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-  </div>
-
-  <div class="infos">
-    <p class="date-time">
-                    2 day ago
-    </p>
-    <p class="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur.
-    </p>
-</div>
-
-<div class="author">
-  — John Doe
-</div>
-</div>
-
-<!--------------------------------------------------------------------------------------------------------->
-  
-
-<div class="card">
-  <div class="stars">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="star">
-      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-    </svg>
-  </div>
-
-  <div class="infos">
-    <p class="date-time">
-                    2 day ago
-    </p>
-    <p class="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur.
-    </p>
-</div>
-
-<div class="author">
-  — John Doe
-</div>
-</div>
-</div>
-<!--------------------------------------------------------------------------------------------------------->
+      <div class="card">
+        <div class="stars">
+          <!-- Star SVGs here -->
+        </div>
+        <div class="infos">
+          <p class="date-time">2 days ago</p>
+          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur.</p>
+        </div>
+        <div class="author">— John Doe</div>
+      </div>
+    </section>
+  </main>
 <hr/>
-<div id="contact1">
-  <div class="contact-content">
-    <p class="contact-title">Contact</p>
-    <p class="contact-details">
-      1st floor, NK bldg,<br/> 
-      barfiwala marg 401202<br/><br/>
-      help@moveit.com<br/>
-      200-102991
-    </p>
-  </div>
+  <footer id="foot">
+    <div id="contact1">
+    <div class="contact-content">
+      <h2 class="contact-title">Contact</h2>
+      <p class="contact-details">
+        1st floor, NK bldg,<br> 
+        barfiwala marg 401202<br><br>
+        help@moveit.com<br>
+        200-102991
+      </p>
+    </div>
+    </div>
+<div id="foot-form">
+    <form class="form" action="https://api.web3forms.com/submit" method="POST" style="margin-right: 6rem; margin-top: 4rem;">
+
+        <input type="hidden" name="access_key" value="d9160f50-8358-4e19-b4bb-48a6889b6741">
+        
+        <div class="flex">
+            <label>
+                <input class="input" type="text" name="First Name" placeholder="first name" required="">
+            </label>
+    
+            <label>
+                <input class="input" type="text" name="Last Name" placeholder="last name" required="">
+            </label>
+        </div>  
+                
+        <label>
+            <input class="input" type="email" name="Email" placeholder="email" required="">
+        </label> 
+            
+        <label>
+            <input class="input" placeholder="phone" name="Phone" type="tel" required="">
+        </label>
+        <label>
+            <textarea class="input01" placeholder="Address" name="Address" rows="3" required=""></textarea>    
+        </label>
+        
+        <button href="#" class="fancy" type="submit">
+          <span class="top-key"></span>
+          <span class="text">submit</span>
+          <span class="bottom-key-1"></span>
+          <span class="bottom-key-2"></span>
+        </button>
+    </form>
 </div>
-
-     <form class="form" action="https://api.web3forms.com/submit" method="POST" style="margin-right: 6rem; margin-top: 4rem;">
-
-      <input type="hidden" name="access_key" value="d9160f50-8358-4e19-b4bb-48a6889b6741">
-      
-      <div class="flex">
-          <label>
-              <input class="input" type="text" name="First Name" placeholder="first name" required="">
-             
-          </label>
-  
-          <label>
-              <input class="input" type="text" name="Last Name" placeholder="last name" required="">
-             
-          </label>
-      </div>  
-              
-      <label>
-          <input class="input" type="email" name="Email" placeholder="email" required="">
-         
-      </label> 
-          
-      <label>
-          <input class="input" placeholder="phone" name="Phone" type="tel" required="">
-         
-      </label>
-      <label>
-          <textarea class="input01" placeholder="Address" name="Address" rows="3" required=""></textarea>
-         
-      </label>
-      
-      <button href="#" class="fancy" type="submit">
-        <span class="top-key"></span>
-        <span class="text">submit</span>
-        <span class="bottom-key-1"></span>
-        <span class="bottom-key-2"></span>
-      </button>
-  </form>
-  </div>
-
-
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
 </html>
