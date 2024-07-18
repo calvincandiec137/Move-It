@@ -348,7 +348,54 @@
   margin: 8rem 2rem;
   justify-content: space-around;
 }
+/* -------------------------------------------------------------------------------- */
+#contact1 {
+    margin-top: 4rem;
+    margin-left: 8rem;
+  }
 
+  .contact-content {
+    width: 50%;
+    float: left;
+  }
+
+  .contact-title {
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgb(13,110,253);
+  }
+
+  .contact-details {
+    font-weight: 300;
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 480px) {
+
+    .contact2{
+      width: 100%;
+    }
+
+    #contact1 {
+    margin-top: 4rem;
+    margin-left: 10rem;
+  }
+
+    .contact-title {
+      font-size: 3rem;
+    }
+
+    .contact-details {
+      font-size: 1.3rem;
+    }
+
+    #review {
+      display: block;
+      font-size: 0.75rem;
+      margin-left: 4.5rem;
+    }
+
+  }
   </style>
 </head>
 
@@ -398,7 +445,7 @@
     <p class="lead mb-4 ">Welcome to our website, where we are on a mission to provide exceptional moving services to customers in the US. As a startup, we believe that moving doesn't have to be stressful or complicated, and we are passionate about making the process as seamless and enjoyable as possible.</p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5" bis_skin_checked="1">
       <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get Quote</button>
-      <a href="#contact1">  <button type="button"  class="btn btn-outline-secondary btn-lg px-4">Contact Us</button></a>
+      <a href="#contact1">  <button type="button"  class="btn contact2 btn-outline-secondary btn-lg px-14">Contact Us</button></a>
     </div>
   </div>
   <div class="overflow-hidden" style="max-height: 50vh;" bis_skin_checked="1">
@@ -443,7 +490,7 @@
     </div>
   </div>
 <!--------------------------------------------------------------------------------------------------------->
-<div class="slide" style="display: flex; justify-content: center;">
+<div class="slide" style="display: flex; justify-content: center; align-items:stretch;">
 <div id="carouselExample" class="carousel slide" style="width: 70%; height:auto; margin-top: 4rem;">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -593,34 +640,16 @@ molestiae quas vel sint commodi repudiandae consequuntur.
 </div>
 <!--------------------------------------------------------------------------------------------------------->
 <hr/>
-  <div id="contact1"  >
-    <div style="
-    margin-top: 4rem; 
-    margin-left: 8rem; 
-    width: 50%; 
-    float: left; 
-    @media screen and (min-width: 320px) {
-        margin-top: 2rem;
-        margin-left: 1rem;
-        width: 100%;
-        float: none;
-    }
-">
-    <p style="
-        font-size: 5rem; 
-        font-weight: 800; 
-        color: rgb(13,110,253);
-        @media screen and (min-width: 320px) {
-            font-size: 0.5rem;
-        }
-    ">Contact</p>
-    <p style="
-        font-weight: 300; 
-        font-size: 2rem;
-        @media screen and (min-width: 320px) {
-            font-size: 0.7rem;
-        }
-    ">1st floor, NK bldg,<br/> barfiwala marg 401202<br/><br/>help@moveit.com<br/>200-102991</p>
+<div id="contact1">
+  <div class="contact-content">
+    <p class="contact-title">Contact</p>
+    <p class="contact-details">
+      1st floor, NK bldg,<br/> 
+      barfiwala marg 401202<br/><br/>
+      help@moveit.com<br/>
+      200-102991
+    </p>
+  </div>
 </div>
 
      <form class="form" action="https://api.web3forms.com/submit" method="POST" style="margin-right: 6rem; margin-top: 4rem;">
